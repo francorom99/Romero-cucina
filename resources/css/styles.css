@@ -315,7 +315,9 @@ footer section {
 .texto-carta h2 {
   text-align: center;
 }
-
+.texto-carta span {
+  color: var(--secundario);
+}
 .comida-item {
   margin-bottom: 1em;
 }
@@ -337,22 +339,39 @@ footer section {
   font-weight: 400;
 }
 .comida-dia h3{
-  font-family: 'Times New Roman', Times, serif;
-  letter-spacing: -1.5px;
   font-size: 1.2rem;
 }
 
-.imagenes-carta {
+/* Contenedor principal */
+.mosaico-asimetrico {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fila única */
+.fila {
   display: flex;
+  gap: 8px; /* Espacio entre columnas */
 }
-.imagenes-carta-grande-1, .imagenes-carta-grande-2 {
-  flex-grow: 2;
+
+/* Imágenes grandes (el ancho de cada una (35%*2=70%) */
+.img-grande {
+  width: 35%;
+  height: 350px; /* Altura fija */
+  object-fit: cover;
 }
-.imagenes-carta-chicas {
-  flex-grow: 1;
-  justify-content: flex-start;
-  gap: 6px;
+
+/* imágenes pequeñas (el resto de las imagenes grandes (100-(35%*2)=30%) */
+.contenedor-pequenas {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* columnas */
+  gap: 8px; 
 }
-.imagenes-carta-grande-1 figure img, .imagenes-carta-grande-2 figure img, .imagenes-carta-chicas figure img {
-  max-width: 100% ;
+
+/* Imágenes pequeñas (mismo tamaño) */
+.img-pequena {
+  width: 100%;
+  height: 171px; /* (altura de la img-grande (350px) - gap (8px)) / 2 */
+  object-fit: cover;
 }
