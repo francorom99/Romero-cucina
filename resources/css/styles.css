@@ -1,0 +1,358 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Holtwood+One+SC&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+  --primario: #411212;
+  --secundario: #751212;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  margin: 0;
+  background-color: whitesmoke;
+  font-family: 'DM Sans', sans-serif;
+}
+.name::placeholder, .email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  opacity: 1; /* Firefox */
+}
+
+/* Header y menu barra */
+.menu {
+  display: flex;
+  align-items:baseline;
+  justify-content: space-around;
+}
+header {
+  width: 100%;
+  padding: 1em 4em 1em 4em;
+  background-color: var(--primario);
+}
+header a {
+  text-decoration: none;
+}
+.menu a {
+  position: relative;
+  display: block;
+  padding: 0 15px;
+  line-height: 60px;
+}
+.menu a:before{
+display: block;
+position: absolute;
+bottom: 15px;
+left: 15px;
+width: calc(100% - 30px);
+height: 2px;
+background: white;
+content: "";
+transition: transform 0.2s ease;
+-webkit-transform: scaleX(0);
+-ms-transform: scaleX(0);
+transform: scaleX(0);
+transform-origin: 0 0;
+}
+.menu a:hover:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.menu a {
+  color: rgb(255, 255, 255);
+  margin: 0 2em 0 2em;
+}
+
+.nav i {
+  color: rgb(255, 255, 255);
+  font-size: 1.4em;
+
+}
+.butlr-logo img{
+  max-width: 5rem;
+  height: auto;
+  object-fit: contain;
+
+}
+.nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+ }
+ .carrito i:hover {
+  color: rgb(93, 93, 93);
+ }
+/*       */
+
+main {
+  height: 300dvh; 
+  position: relative;
+}
+
+main .hero {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  mix-blend-mode:multiply;
+  z-index: 20;
+
+}
+.hero {
+  overflow: hidden; /* Esto evita que el contenido se salga del hero */
+}
+main img {
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+}
+.imgFondo {
+    background-color: black;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 10; /* Menor que el texto pero mayor que el fondo */
+    position: relative; /* Añade esto si no está ya */
+}
+.imgFondo img {
+  opacity: .7;
+}
+
+.scroll-texto {
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  position:absolute;
+  top: 20%;
+  color: white;
+  max-width: 50%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  z-index: 30;
+}
+
+.scroll-texto.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-texto p {
+  color: white;
+  margin: 1lh 0 1lh 0;
+  text-align: center;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  line-height: 4rem;
+  font-size: 4em;
+  color: white;
+  text-align: center;
+}
+h1 strong {
+  font-weight: 900;
+}
+p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  color: black;
+}
+
+.btnModelo {
+  font-family: "DM Sans", sans-serif;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 15px 30px;
+  border: 2px solid transparent;
+  color: rgb(255, 255, 255);
+  background: var(--primario);
+  transition: background, background-color .5s ease-in-out;
+}
+.btnModelo:hover {
+  background-color: var(--secundario);
+  color: white;
+}
+.contenedor-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+footer {
+  display: flex;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2em;
+  gap: 2em;
+  box-sizing: border-box;
+}
+
+
+.producto input {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
+}
+
+.producto input:checked {
+  border: 3px solid whitesmoke;
+  outline: 2px solid rgb(0, 0, 0);
+  background-color: black;
+
+}
+#name {
+  width: 100%;
+}
+#email {
+  width: 100%;
+}
+footer section {
+  flex:auto;
+  display: flex;
+  flex-direction: column;
+}
+.publicidad {
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top: 1em;
+
+}
+
+.producto {
+  margin-top: auto;
+  margin-bottom: 1em;
+}
+.nombre {
+  margin-top: 1em;
+}
+
+.email {
+  margin-top: 1em;
+}
+.spnFooter {
+  font-size: 12px;
+}
+
+/* inputs text/email */
+
+.form {
+  position: relative;
+  width: 100%;
+ }
+ /* styling of Input */
+ .input {
+
+  color: #000000;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: 1px solid #dddddd63;
+ }
+ /* styling of animated border */
+ .input-border {
+  position: absolute;
+  background: black;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.2s ease;
+  transform-origin: 0 0 ;
+ } 
+ /* Hover on Input */
+ input:hover {
+  background: #4985e01f;
+ }
+ 
+ input:focus {
+  outline: none;
+ }
+ /* borde */
+ input:focus ~ .input-border {
+  width: 100%;
+  transition: .5s ease;
+ }
+ 
+#carta {
+  margin: 4em;
+}
+.carta {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+}
+.carta-izquierda {
+  flex-grow: 1;
+}
+.carta-derecha {
+  flex-grow: 1;
+}
+.texto-carta {
+  margin: 2em 0 2em 0;
+}
+
+.texto-carta h2 {
+  text-align: center;
+}
+
+.comida-item {
+  margin-bottom: 1em;
+}
+.comida-header {
+  display: flex;
+  align-items: center;
+}
+.comida-barra {
+  position: relative;
+  border-bottom: 1px solid;
+  color: grey;
+  width: 100%;
+  margin: 0 1rem 0 1rem;
+}
+.comida-detalles p {
+  color: #4d4d4d;
+}
+.comida-precio p {
+  font-weight: 400;
+}
+.comida-dia h3{
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: -1.5px;
+  font-size: 1.2rem;
+}
+
+.imagenes-carta {
+  display: flex;
+}
+.imagenes-carta-grande-1, .imagenes-carta-grande-2 {
+  flex-grow: 2;
+}
+.imagenes-carta-chicas {
+  flex-grow: 1;
+  justify-content: flex-start;
+  gap: 6px;
+}
+.imagenes-carta-grande-1 figure img, .imagenes-carta-grande-2 figure img, .imagenes-carta-chicas figure img {
+  max-width: 100% ;
+}
